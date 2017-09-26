@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <style link rel="stylesheet" type="text/css">
+            #div1,#div2,#div3,#div4,#div5,#div6{
+                width: 100px;
+                height: 100px;
+                padding: 10px;
+                border: 1px solid #aaaaaa;
+            }
+            #div1{
+                position: absolute;
+                top: 150px;
+                left: 600px;
+            }
+                
+            #div2{
+                
+                position: absolute;
+                top: 400px;
+                left: 300px;
+            }
+                 
+            #div3{
+               
+                position: absolute;
+                top: 400px;
+                left: 450px;
+            }     
+            #div4{
+               
+                position: absolute;
+                top: 400px;
+                left: 600px;
+            }     
+            #div5{
+                
+                position: absolute;
+                top: 400px;
+                left: 750px;
+            }
+            #div6{
+               
+                position: absolute;
+                top: 400px;
+                left: 900px;
+            }
+            #imag{
+                position: absolute;
+                top: 135px;
+                left: 300px;
+            }
+            
+            #imag2{
+                position: absolute;
+                top: 135px;
+                left: 450px;
+            }
+            #imag3{
+                position: absolute;
+                top: 135px;
+                left: 720px;
+                
+            }
+            
+            #button1,#button2,#button3,#button4,#button5{
+                width: 120px;
+                height: 30px;
+                position: absolute;
+                top: 530px;
+            }
+            #button1{
+               position: absolute;
+               left: 300px;
+            }
+            #button2{
+                position: absolute;
+                left: 450px;
+            }
+            #button3{
+                position: absolute;
+                left: 600px;
+            }
+            #button4{
+                position: absolute;
+                left: 750px;
+            }
+            #button5{
+                position: absolute;
+                left: 900px;
+            }
+            #again{
+                height: 50px;
+                width: 50px;
+                position: absolute;
+                left: 1200px;
+                top: 200px;
+            }
+            #parra1,#parra2,#parra3,#parra4,#parra5{
+                border: 1px solid #000000;
+                position: absolute;
+                Top: 
+            }
+            
+            
+        </style> 
+		
+		<script>
+			function allowDrop(ev) 
+			{
+				ev.preventDefault();
+			}
+
+			function drag(ev) {
+				ev.dataTransfer.setData("text", ev.target.id);
+			}
+
+			function drop(ev) {	
+                ev.preventDefault();
+				var data = ev.dataTransfer.getData("text");
+				ev.target.appendChild(document.getElementById(data));
+				var imagen = document.getElementById("imag");
+				if(data=="drag1"){
+					imagen.src="cobre.png";
+				}
+                if(data=="drag2"){
+                    imagen.src="aluminio.png";
+                }
+                if(data=="drag3"){
+                    imagen.src="silicio.png"
+                }
+                if(data=="drag4"){
+                    imagen.src="madera.png"
+                }
+                if(data=="drag5"){
+                    imagen.src="bombillo.png"
+                }
+            }
+			
+            function mostrar(){
+                document.getElementById("parra1").style.display="";
+            }
+                function mostrar2(){
+                document.getElementById("parra2").style.display="";
+            }   
+                function mostrar3(){
+                document.getElementById("parra3").style.display="";
+            }   
+                function mostrar4(){
+                document.getElementById("parra4").style.display="";
+            }   
+                function mostrar5(){
+                document.getElementById("parra5").style.display="";
+            }
+            
+            function cerrar(){
+                document.getElementsByClassName("info").style.display="none";
+            }
+       
+            </script>
+		
+	</head>
+	<body>
+                      
+                     
+
+		<img id="imag" src = "http://www.theaa.com/~/media/the-aa/app-promo/aa-logo-beam-250x-250.png" width="150" height="150">
+        <img id="imag2" src="http://www.theaa.com/~/media/the-aa/app-promo/aa-logo-beam-250x-250.png" width="150" height="150">
+        <img id="imag3" src="http://www.theaa.com/~/media/the-aa/app-promo/aa-logo-beam-250x-250.png" width="150" height="150">
+
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">	
+		</div>
+
+		<input id="button1" type="button" value="Propiedades" onclick="mostrar()">
+		<div  class="info" id="parra1" style="display: none;"><p>info#1</p></div>
+        
+        <input id="button2" type="button" value="Propiedades" onclick="mostrar2()">
+        <div class="info" id="parra2" style="display: none;"><p>info#2</p></div>
+        
+        <input id="button3" type="button" value="Propiedades" onclick="mostrar3()">
+        <div class="info" id="parra3" class="info" style="display: none;"><p>info#3</p> </div>
+        
+        <input id="button4" type="button" value="Propiedades" onclick="mostrar4()">
+        <div class="info" id="parra4"  style="display: none"><p>info#4</p></div>
+        
+        <input id="button5" type="button" value="Propiedades" onclick="mostrar5()">
+        <div class="info" id="parra5"  style="display: none;"><p>info#5</p></div>
+        
+        <input id="again" type="button" value="again" onclick="cerrar">
+        
+        
+		
+
+		<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<img id="drag1" src="Cobre.png" draggable="true" ondragstart="drag(event)" width="100" height="100">
+		</div>
+
+		
+
+		<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<img id="drag2" src="cobre.png" draggable="true" ondragstart="drag(event)" width="100" height="100">
+		</div>
+		
+		
+
+		<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<img id="drag3" src="Cobre.png" draggable="true" ondragstart="drag(event)" width="100" height="100">
+
+		</div>
+
+		
+
+		<div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<img id="drag4" src="Cobre.png" draggable="true" ondragstart="drag(event)" width="100" height="100">
+        </div>
+            
+        <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img id="drag5" src="Cobre.png" draggable="true" ondragstart="drag(event)" width="100" height="100">
+
+		</div>
+	</body>
+</html>
